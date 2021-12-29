@@ -12,7 +12,7 @@ public class Plant{
     private int _maxDaysWithoutWater;
     private boolean _autoWatering;
     private int _daysFromLastWater;
-    private PlantManager _plantManager;
+
 
 
     // Konstruktor
@@ -23,7 +23,7 @@ public class Plant{
         _maxDaysWithoutWater = maxDaysWithoutWater;
         _autoWatering = autoWatering;
         _daysFromLastWater = 0;
-        _plantManager = ;
+        
     }
 
     // getter andsetter
@@ -60,13 +60,6 @@ public class Plant{
     }
     public void setAutoWatering(boolean autoWatering) {
         _autoWatering = autoWatering;
-        //change sets in plant manager
-        if (autoWatering == true) {
-            _plantManager.getPlantsAutoWatering().add(this);
-        }
-        else {
-            _plantManager.removeFromSet(_plantManager.getPlantsAutoWatering(), this);
-        }
     }
 
     public int getDaysFromLastWater() {
