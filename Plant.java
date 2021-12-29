@@ -13,6 +13,8 @@ public class Plant{
     private boolean _autoWatering;
     private int _daysFromLastWater;
     private PlantManager _plantManager;
+
+
     // Konstruktor
     public Plant(String name, String nameLatin, int maxDaysWithoutWater, boolean autoWatering){
         _name = name;
@@ -21,7 +23,7 @@ public class Plant{
         _maxDaysWithoutWater = maxDaysWithoutWater;
         _autoWatering = autoWatering;
         _daysFromLastWater = 0;
-        _plantManager = 
+        _plantManager = ;
     }
 
     // getter andsetter

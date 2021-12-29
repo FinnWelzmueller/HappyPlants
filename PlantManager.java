@@ -29,7 +29,7 @@ public class PlantManager {
         return _plantsAutoWatering;
     }
 
-
+    //Remove Plants
     public void removeFromSet(Set<Plant> set, Plant plant){
         Iterator<Plant> plants = set.iterator();
         while(plants.hasNext()){
@@ -38,8 +38,6 @@ public class PlantManager {
             }
         }
     }
-
-
     public void removePlant(Plant plant) {
             removeFromSet(_plants, plant);
             if (plant.getAutoWatering() == true) {
@@ -47,4 +45,30 @@ public class PlantManager {
             }
     }
 
+    //care about plant watering
+    public void plantsNeedWater() {
+        //create set with all plants that need water
+        Iterator<Plant> plants = _plants.iterator();
+
+        while(plants.hasNext()) {
+            if(plants.next().getNeedWater() && !plants.next().getAutoWatering()){
+                System.out.println(plants.next().getName()+" need water!");
+            }
+            else if (plants.next().getNeedWater() && plants.next().getAutoWatering()) {
+                callWatering(plants.next());
+            }
+        }
+    }
+    private void callWatering(Plant plant) {
+        //add water output
+    }
+
+
+    //priter
+    public void listAllPlants(){
+        Iterator<Plant> plants = _plants.iterator();
+        while(plants.hasNext()){
+            System.out.println("Name: "+plants.next().getName()+", Latin Name: "+plants.next().getNameLatin());
+        }
+    }
 }
